@@ -1,5 +1,7 @@
 #define LED_PIN 13
 
+#define UART_SPEED 57600
+
 /*
  * This code is for stationary device
  */
@@ -9,7 +11,7 @@ uint8_t counter = 0;
 void setup() {
    delay(2000);
    pinMode(LED_PIN, OUTPUT);
-   Serial.begin(9600);
+   Serial.begin(UART_SPEED);
 }
 
 enum dataStates {
@@ -70,7 +72,7 @@ void loop() {
     delay(30);
     digitalWrite(LED_PIN, LOW);
     
-    Serial.begin(9600);
+    Serial.begin(UART_SPEED);
     doRetransmit = false;
   }
 
